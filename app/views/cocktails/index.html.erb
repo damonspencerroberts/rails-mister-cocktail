@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center my-4">
+    <h1>Cocktails</h1>
+  </div>
+
+  <div class="container">
+    <div class="parent-home m-4">
+      <% @cocktails.each do |tail| %>
+        <%= link_to cocktail_path(tail) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+            <%= tail.name %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Welcome to Spicybrew</h1>
     <p>Change your life and learn to make some of the nicest cocktails out there.</p>
-    <a class="btn btn-outline-primary w-25" href="/">Cocktail List</a>
+    <a class="btn btn-outline-primary w-25" href="/cocktails">Cocktail List</a>
   </div>
 </div>
 
@@ -13,9 +13,11 @@
 <div class="container">
   <div class="parent-home m-4">
     <% @cocktails_sample.each do |tail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
-        <%= tail.name %>
-      </div>
+      <%= link_to cocktail_path(tail) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random)">
+          <%= tail.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

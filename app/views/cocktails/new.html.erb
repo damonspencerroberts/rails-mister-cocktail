@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center my-4">
+    <h1>Create a new cocktail</h1>
+  </div>
+
+  <div class="form-div w-50">
+    <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name, input_html: { placeholder: "Cocktail Name" }, label: false %>
+    <%= f.button :submit, class: "btn-success w-100" %>
+    <% end %>
+  </div>
+</div>
