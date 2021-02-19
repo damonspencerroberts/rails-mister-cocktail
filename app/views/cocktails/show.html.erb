@@ -6,10 +6,10 @@
     </div>
     <div class="updelicons">
       <%= link_to edit_cocktail_path(@cocktail), class: "updelicon" do %>
-        <i class="fas fa-pen fa-3x"></i>
+        <i class="fas fa-pen fa-2x"></i>
       <% end %>
       <%= link_to cocktail_path(@cocktail), class: "updelicon", method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <i class="fas fa-trash fa-3x"></i>
+        <i class="fas fa-trash fa-2x"></i>
       <% end %>
     </div>
   </div>
@@ -35,6 +35,7 @@
           <div class="py-2">
             <% @cocktail.reviews.each do |rev| %>
               <p>
+                <strong class="moroonoshi"><%= rev.name %></strong> -
                 <%= rev.content %>
                 <% rev.rating.times do %>
                   ⭐
