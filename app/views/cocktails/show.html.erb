@@ -1,5 +1,5 @@
 
-<div class="banner banner-tail" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= image_url(@cocktail.image_url) %>); object-fit: cover;">
+<div class="banner banner-tail" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('<%= cl_image_path @cocktail.photo.key %>'); object-fit: cover;">
   <div class="container">
     <h1><%= @cocktail.name %></h1>
   </div>

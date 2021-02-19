@@ -1,4 +1,4 @@
-<div class="banner banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://images.unsplash.com/photo-1542600176-9d2c4bb4bc1a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1001&q=80);">
+<div class="banner banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://res.cloudinary.com/dc1w9349i/image/upload/v1613738951/mister-cocktail/bartender_pfyann.jpg);">
   <div class="container">
     <h1>Welcome to Spicybrew</h1>
     <p>Change your life and learn to make some of the nicest cocktails out there.</p>
@@ -14,7 +14,7 @@
   <div class="parent-home m-4">
     <% @cocktails_sample.each do |tail| %>
       <%= link_to cocktail_path(tail) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= image_url(tail.image_url) %>)">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path tail.photo.key %>')">
           <%= tail.name %>
         </div>
       <% end %>

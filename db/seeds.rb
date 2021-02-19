@@ -29,6 +29,24 @@ new_ings.each do |ing|
 end
 
 # create Cocktails
+image_urls = [
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613736713/mister-cocktail/mojito_hgld1t.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613736721/mister-cocktail/moscow_mule_z8wl8h.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613736749/mister-cocktail/white_russian_ig8zbt.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613736734/mister-cocktail/strawberry_daqu_qulrui.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613736695/mister-cocktail/gin_tonic_l2vfbn.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613736742/mister-cocktail/vodka_redbull_pw1w02.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613737704/mister-cocktail/old_fashioned_dggjro.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613737704/mister-cocktail/negroni_xmtdoc.jpg',
+  'https://res.cloudinary.com/dc1w9349i/image/upload/v1613737704/mister-cocktail/dry_martini_e9kzhd.jpg'
+]
+
+new_image_url_files = image_urls.map do |url|
+  URI.open(url)
+end
+
+p new_image_url_files
+
 init_tails = [
   'Mojito',
   'Moscow Mule',
@@ -42,9 +60,11 @@ init_tails = [
 ]
 
 # add images here
-
 init_tails.each_with_index do |tail, index|
-  Cocktail.create(name: tail, image_url: init_images[index])
+  name_file = "#{tail.split(' ').join('_')}.jpeg"
+  new_cocktail = Cocktail.new(name: tail)
+  new_cocktail.photo.attach(io: new_image_url_files[index], filename: name_file, content_type: 'image/jpg')
+  new_cocktail.save
 end
 
 # create doses
