@@ -37,6 +37,12 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
+  def pour
+    @query1 = params[:query].capitalize
+    @query2 = params[:query].downcase
+    @cocktails = Cocktail.where('name LIKE ? OR name LIKE ?', "%#{@query1}%", "%#{@query2}%")
+  end
+
   private
 
   def find_cocktail

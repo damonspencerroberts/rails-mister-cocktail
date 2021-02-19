@@ -7,10 +7,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <a class="nav-link" aria-current="page" href="/">Home</a>
         <%= link_to "Cocktail List", cocktails_path, class: "nav-link" %>
         <%= link_to "Create Cocktail", new_cocktail_path, class: "nav-link" %>
       </div>
     </div>
+    <form class="d-flex search-form" action="/cocktails/search">
+      <input class="form-control me-2 bg-transparent text-primary" type="search" name="query" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
   </div>
 </nav>
