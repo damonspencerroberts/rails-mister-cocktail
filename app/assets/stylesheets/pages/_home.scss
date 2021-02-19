@@ -105,6 +105,12 @@
   animation-fill-mode: backwards;
 }
 
+.deletoshi {
+  padding-left: 10px;
+  color: $maroon;
+  text-decoration: underline;
+}
+
 @keyframes sideRight {
   0% {
     opacity: 0;

@@ -9,10 +9,10 @@
     <div class="col-12 col-lg-6">
       <div class="ingredients-show-div m-4 p-4 rounded shadow-sm">
         <div>
-          <h3>Ingredients</h3>
+          <h1>Ingredients</h1>
           <div class="py-2">
             <% @doses.each do |dose| %>
-              <p><%= dose.description %> <%= dose.ingredient.name %></p>
+              <p><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "(Delete)", delete_doses_path(dose), class: "deletoshi", method: :delete %></p>
             <% end %>
           </div>
         </div>
