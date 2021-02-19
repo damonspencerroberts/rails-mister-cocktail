@@ -1,0 +1,12 @@
+<div class="container bigger-container">
+  <div class="d-flex justify-content-center align-items-center my-4">
+    <h1>Add a Review for <%= @cocktail.name %></h1>
+  </div>
+  <div class="form-div w-50">
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :content, input_html: { placeholder: 'Content' }, label: false %>
+      <%= f.input :rating, collection: [5, 4, 3, 2, 1, 0], label: false, prompt: "Rating" %>
+      <%= f.button :submit, class: "btn-success w-100" %>
+    <% end %>
+  </div>
+</div>

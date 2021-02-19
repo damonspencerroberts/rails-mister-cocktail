@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cocktails do
     member do
       resources :doses, only: %i[new create]
+      resources :reviews, only: %i[new create]
     end
   end
   delete 'doses/:id', to: 'doses#delete', as: 'delete_doses'
