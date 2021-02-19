@@ -111,6 +111,25 @@
   text-decoration: underline;
 }
 
+.updelicon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.updelicons {
+  display: flex;
+}
+
+.updelicons * {
+  padding: 7px;
+}
+
+.updelicons *:hover {
+  text-decoration: none !important;
+  opacity: 0.7;
+}
+
 @keyframes sideRight {
   0% {
     opacity: 0;

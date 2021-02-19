@@ -1,7 +1,17 @@
 
 <div class="banner banner-tail" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('<%= cl_image_path @cocktail.photo.key %>'); object-fit: cover;">
-  <div class="container">
-    <h1><%= @cocktail.name %></h1>
+  <div class="container updelicon">
+    <div>
+      <h1><%= @cocktail.name %></h1>
+    </div>
+    <div class="updelicons">
+      <%= link_to edit_cocktail_path(@cocktail), class: "updelicon" do %>
+        <i class="fas fa-pen fa-3x"></i>
+      <% end %>
+      <%= link_to cocktail_path(@cocktail), class: "updelicon", method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash fa-3x"></i>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -12,7 +22,7 @@
           <h1>Ingredients</h1>
           <div class="py-2">
             <% @doses.each do |dose| %>
-              <p><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "(Delete)", delete_doses_path(dose), class: "deletoshi", method: :delete %></p>
+              <p><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "(Delete)", delete_doses_path(dose), class: "deletoshi", method: :delete, data: { confirm: 'Are you sure?' } %></p>
             <% end %>
           </div>
         </div>

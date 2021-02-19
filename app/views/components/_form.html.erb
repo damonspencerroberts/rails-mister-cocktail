@@ -1,0 +1,7 @@
+<div class="form-div w-50">
+  <%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name, input_html: { placeholder: "Cocktail Name" }, label: false %>
+  <%= f.input :photo, as: :file, label: false %>
+  <%= f.button :submit, class: "btn-success w-100" %>
+  <% end %>
+</div>
