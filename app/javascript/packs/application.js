@@ -7,10 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import { initSelect2 } from "../plugins/init_select2"
+import { initUpdateNavbarOnScroll } from "../plugins/init_add_scroll_navbar"
 import "channels"
 import 'bootstrap';
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-initSelect2();
+
+document.addEventListener('turbolinks:load', (e) => {
+  initSelect2();
+  initUpdateNavbarOnScroll();
+});

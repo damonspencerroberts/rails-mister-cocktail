@@ -11,36 +11,9 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Spicybrew</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <%= link_to "Cocktail List", cocktails_path, class: "nav-link" %>
-          <%= link_to "Create Cocktail", new_cocktail_path, class: "nav-link" %>
-        </div>
-      </div>
-    </div>
-  </nav>
-
+  <%= render partial: "components/navbar" %>
   <%= yield %>
-
-  <div class="footer">
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <div class="footer-copyright">
-      Spicybrew © Drs.
-    </div>
-  </div>
+  <%= render partial: "components/footer" %>
 </body>
 
 </html>

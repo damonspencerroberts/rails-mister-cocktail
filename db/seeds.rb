@@ -26,9 +26,16 @@ end
 
 # create Cocktails
 init_tails = ['Mojito', 'Moscow Mule', 'White Russian', 'Strawberry Daquiri', 'Gin and Tonic', 'Vodka Redbull']
-
-init_tails.each do |tail|
-  Cocktail.create(name: tail)
+init_images = [
+  'drinks/mojito.jpeg',
+  'drinks/moscow_mule.jpeg',
+  'drinks/white_russian.jpeg',
+  'drinks/strawberry_daqu.jpeg',
+  'drinks/gin_tonic.jpeg',
+  'drinks/vodka_redbull.jpeg'
+]
+init_tails.each_with_index do |tail, index|
+  Cocktail.create(name: tail, image_url: init_images[index])
 end
 
 # create doses
