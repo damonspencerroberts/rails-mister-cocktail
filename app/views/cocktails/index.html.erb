@@ -4,14 +4,16 @@
   </div>
 
   <div class="container">
-    <div class="parent-home m-4">
-      <% @cocktails.each do |tail| %>
-        <%= link_to cocktail_path(tail) do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path tail.photo.key %>')">
-            <%= tail.name %>
+    <div class="row">
+        <% @cocktails.each do |tail| %>
+          <div class="col-lg-4 col-md-6 col-12 my-4">
+            <%= link_to cocktail_path(tail) do %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path tail.photo.key %>')">
+                <%= tail.name %>
+              </div>
+            <% end %>
           </div>
         <% end %>
-      <% end %>
     </div>
   </div>
 </div>
