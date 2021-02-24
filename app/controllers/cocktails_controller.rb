@@ -1,4 +1,5 @@
 class CocktailsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :find_cocktail, only: %i[show edit update destroy]
 
   def index
