@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark static-top nav-sm-options p-3">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark static-top nav-sm-options px-2">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Spicybrew</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -16,5 +16,25 @@
       <input class="form-control me-2 bg-transparent text-primary" type="search" name="query" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-primary" type="submit">Search</button>
     </form>
+    <div class="dropdown pl-4">
+      <% if user_signed_in? %>
+        <div class="iconoshi" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user-circle fa-3x"></i>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+          <li><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
+        </ul>
+      <% else %>
+        <div class="iconoshi" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-user-circle fa-3x"></i>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+          <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %></li>
+        </ul>
+      <% end %>
+    </div>
   </div>
 </nav>
